@@ -1,0 +1,594 @@
+﻿<Window
+        xmlns="http://schemas.microsoft.com/winfx/2006/xaml/presentation"
+        xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml"
+        xmlns:d="http://schemas.microsoft.com/expression/blend/2008"
+        xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006"
+        xmlns:local="clr-namespace:PuzzleGame"
+        xmlns:Puzzle="clr-namespace:Puzzle" 
+        xmlns:System="clr-namespace:System;assembly=mscorlib" x:Name="window" x:Class="PuzzleGame.MainWindow" 
+        mc:Ignorable="d"
+        Title="MainWindow" AllowsTransparency="True" WindowStyle="None" Background="#FF383838" WindowStartupLocation="CenterScreen" FontFamily="Buxton Sketch" Icon="Image/Eris.png" Height="615" Width="1220">
+    <Window.Resources>
+        <Style TargetType="{x:Type Label}">
+            <Setter Property="TextElement.Foreground" Value="White"/>
+        </Style>
+        <Style TargetType="{x:Type Button}">
+            <Setter Property="Template">
+                <Setter.Value>
+                    <ControlTemplate TargetType="{x:Type Button}">
+                        <Border 
+          x:Name="Border"  
+          CornerRadius="10" 
+          BorderThickness="1"
+          Background="#FF383838"
+          BorderBrush="#FF494949" OpacityMask="{x:Null}">
+                            <ContentPresenter 
+                        		Margin="2"
+                        		HorizontalAlignment="Center"
+                        		VerticalAlignment="Center"
+                        		RecognizesAccessKey="True"/>
+                        </Border>
+                        <ControlTemplate.Triggers>
+                            <Trigger Property="IsKeyboardFocused" Value="true">
+                                <Setter TargetName="Border" Property="BorderBrush" Value="#FFFFA100" />
+                            </Trigger>
+                            <Trigger Property="IsDefaulted" Value="true">
+                                <Setter TargetName="Border" Property="BorderBrush" Value="#FF544CFF" />
+                            </Trigger>
+                            <Trigger Property="IsMouseOver" Value="true">
+
+                                <Setter TargetName="Border" Property="Background" Value="#FF27587A" />
+                                <Setter TargetName="Border" Property="BorderBrush" Value="#FF1E4561" />
+
+                                <Setter TargetName="Border" Property="TextElement.Foreground" Value="White" />
+
+                            </Trigger>
+                            <Trigger Property="IsPressed" Value="true">
+                                <Setter TargetName="Border" Property="Background" Value="#FF444444" />
+                                <Setter TargetName="Border" Property="BorderBrush" Value="Black" />
+
+                                <Setter TargetName="Border" Property="TextElement.FontSize" Value="21" />
+                            </Trigger>
+                            <Trigger Property="IsEnabled" Value="false">
+                                <Setter TargetName="Border" Property="Background" Value="#FF3C3C3C" />
+                                <Setter TargetName="Border" Property="BorderBrush" Value="{x:Null}" />
+
+                            </Trigger>
+
+                        </ControlTemplate.Triggers>
+                    </ControlTemplate>
+                </Setter.Value>
+            </Setter>
+
+        </Style>
+
+    </Window.Resources>
+
+    <Grid>
+        <Puzzle:PuzzlOne x:Name="puzzleOne" WinPuzzle="puzzleOne_WinPuzzle"/>
+        <Puzzle:PuzzleTwo x:Name="puzzleTwo" ImageQueen="Image/figure.png" WinPuzzle="puzzleTwo_WinPuzzle"/>
+        <Puzzle:PuzzleThree x:Name="puzzleThree" WinPuzzle="puzzleThree_WinPuzzle"/>
+
+        <Grid x:Name="_puzzleOne" Visibility="Collapsed">
+            <Puzzle:Number x:Name="c1" Value="3" Indetyfity="2" Height="100" Margin="398,108,712,407" Width="100" Background="White" Cursor="Hand">
+                <Label Content="{Binding Value, ElementName=c1, Mode=OneWay}" HorizontalAlignment="Center" VerticalAlignment="Center" FontSize="60" Foreground="#FF0C0C0C"/>
+            </Puzzle:Number>
+            <Puzzle:Number x:Name="c2" Value="5" Indetyfity="3" Height="100" Margin="498,100,602,400" Width="100" Background="White" Cursor="Hand">
+                <Label Content="{Binding Value, ElementName=c2, Mode=OneWay}" HorizontalAlignment="Center" VerticalAlignment="Center" FontSize="60" Foreground="#FF0C0C0C"/>
+            </Puzzle:Number>
+            <Puzzle:Number x:Name="c3" Value="1" Indetyfity="3"  Height="100" Margin="603,100,497,400" Width="100" Background="White" Cursor="Hand">
+                <Label Content="{Binding Value, ElementName=c3, Mode=OneWay}" HorizontalAlignment="Center" VerticalAlignment="Center" FontSize="60" Foreground="#FF0C0C0C"/>
+            </Puzzle:Number>
+            <Puzzle:Number x:Name="c4" Value="1" Indetyfity="3" Height="100" Margin="708,100,392,400" Width="100" Background="White" Cursor="Hand">
+                <Label Content="{Binding Value, ElementName=c4, Mode=OneWay}" HorizontalAlignment="Center" VerticalAlignment="Center" FontSize="60" Foreground="#FF0C0C0C"/>
+            </Puzzle:Number>
+            <Puzzle:Number x:Name="c5" Value="4" Indetyfity="2" Height="100" Margin="393,205,707,295" Width="100" Background="White" Cursor="Hand">
+                <Label Content="{Binding Value, ElementName=c5, Mode=OneWay}" HorizontalAlignment="Center" VerticalAlignment="Center" FontSize="60" Foreground="#FF0C0C0C"/>
+            </Puzzle:Number>
+            <Puzzle:Number x:Name="c6" Value="7" Indetyfity="1" Height="100" Margin="498,205,602,295" Width="100" Background="White" Cursor="Hand">
+                <Label Content="{Binding Value, ElementName=c6, Mode=OneWay}" HorizontalAlignment="Center" VerticalAlignment="Center" FontSize="60" Foreground="#FF0C0C0C"/>
+            </Puzzle:Number>
+            <Puzzle:Number x:Name="c7" Value="1" Indetyfity="6" Height="100" Margin="603,205,497,295" Width="100" Background="White" Cursor="Hand">
+                <Label Content="{Binding Value, ElementName=c7, Mode=OneWay}" HorizontalAlignment="Center" VerticalAlignment="Center" FontSize="60" Foreground="#FF0C0C0C"/>
+            </Puzzle:Number>
+            <Puzzle:Number x:Name="c8" Value="1" Indetyfity="6" Height="100" Margin="708,205,392,295" Width="100" Background="White" Cursor="Hand">
+                <Label Content="{Binding Value, ElementName=c8, Mode=OneWay}" HorizontalAlignment="Center" VerticalAlignment="Center" FontSize="60" Foreground="#FF0C0C0C"/>
+            </Puzzle:Number>
+            <Puzzle:Number x:Name="c9"  Value="1" Indetyfity="4" Height="100" Margin="393,310,707,190" Width="100" Background="White" Cursor="Hand">
+                <Label Content="{Binding Value, ElementName=c9, Mode=OneWay}" HorizontalAlignment="Center" VerticalAlignment="Center" FontSize="60" Foreground="#FF0C0C0C"/>
+            </Puzzle:Number>
+            <Puzzle:Number x:Name="c10"  Value="3" Indetyfity="4" Height="100" Margin="498,310,602,190" Width="100" Background="White" Cursor="Hand">
+                <Label Content="{Binding Value, ElementName=c10, Mode=OneWay}" HorizontalAlignment="Center" VerticalAlignment="Center" FontSize="60" Foreground="#FF0C0C0C"/>
+            </Puzzle:Number>
+            <Puzzle:Number x:Name="c11"  Value="1" Indetyfity="6" Height="100" Margin="603,310,497,190" Width="100" Background="White" Cursor="Hand">
+                <Label Content="{Binding Value, ElementName=c11, Mode=OneWay}" HorizontalAlignment="Center" VerticalAlignment="Center" FontSize="60" Foreground="#FF0C0C0C"/>
+            </Puzzle:Number>
+            <Puzzle:Number x:Name="c12"  Value="1" Indetyfity="6" Height="100" Margin="708,310,392,190" Width="100" Background="White"  Cursor="Hand">
+                <Label Content="{Binding Value, ElementName=c12, Mode=OneWay}" HorizontalAlignment="Center" VerticalAlignment="Center" FontSize="60" Foreground="#FF0C0C0C"/>
+            </Puzzle:Number>
+            <Puzzle:Number x:Name="c13"  Value="1" Indetyfity="4" Height="100" Margin="393,415,707,85" Width="100" Background="White" Cursor="Hand">
+                <Label Content="{Binding Value, ElementName=c13, Mode=OneWay}" HorizontalAlignment="Center" VerticalAlignment="Center" FontSize="60" Foreground="#FF0C0C0C"/>
+            </Puzzle:Number>
+            <Puzzle:Number x:Name="c14"  Value="2" Indetyfity="4" Height="100" Margin="498,415,602,85" Width="100" Background="White"  Cursor="Hand">
+                <Label Content="{Binding Value, ElementName=c14, Mode=OneWay}" HorizontalAlignment="Center" VerticalAlignment="Center" FontSize="60" Foreground="#FF0C0C0C"/>
+            </Puzzle:Number>
+            <Puzzle:Number x:Name="c15" Value="1" Indetyfity="6" Height="100" Margin="603,415,497,85" Width="100" Background="White"  Cursor="Hand">
+                <Label Content="{Binding Value, ElementName=c15, Mode=OneWay}" HorizontalAlignment="Center" VerticalAlignment="Center" FontSize="60" Foreground="#FF0C0C0C"/>
+            </Puzzle:Number>
+            <Puzzle:Number x:Name="c16" Value="2" Indetyfity="6" Height="100" Margin="708,415,392,85" Width="100" Background="White"  Cursor="Hand">
+                <Label Content="{Binding Value, ElementName=c16, Mode=OneWay}" HorizontalAlignment="Center" VerticalAlignment="Center" FontSize="60" Foreground="#FF0C0C0C"/>
+            </Puzzle:Number>
+
+            <Puzzle:Selector x:Name="color_5"  Margin="867,265,0,0" Color="#FFF65D3B" HorizontalAlignment="Left" VerticalAlignment="Top" Cursor="Hand" Width="100"  Height="30">
+                <Ellipse Fill="{Binding Color, ElementName=color_5, Mode=OneWay}" HorizontalAlignment="Left" VerticalAlignment="Top" Width="30" Height="30" Stroke="#00000000" StrokeThickness="{Binding SelectStroke, ElementName=color_5}"/>
+                <Label Content="{Binding CalcSum, ElementName=color_5, Mode=OneWay}" HorizontalAlignment="Left" Margin="45,0,0,0" VerticalAlignment="Top" Height="30" Width="55" FontSize="21" />
+            </Puzzle:Selector>
+            <Puzzle:Selector x:Name="color_1" SelectStroke="0"   Color="#FFE0D4BE" HorizontalAlignment="Left" Height="30" Margin="867,100,0,0" VerticalAlignment="Top" Width="100"  Cursor="Hand" >
+                <Ellipse Fill="{Binding Color, ElementName=color_1, Mode=OneWay}" HorizontalAlignment="Left" Stroke="#00000000" VerticalAlignment="Top" Width="30" Height="30"  StrokeThickness="{Binding SelectStroke, ElementName=color_1}"/>
+                <Label Content="{Binding CalcSum, ElementName=color_1, Mode=OneWay}" HorizontalAlignment="Left" Margin="45,0,0,0" VerticalAlignment="Top" Height="30" Width="55" FontSize="21"/>
+            </Puzzle:Selector>
+            <Puzzle:Selector x:Name="color_2" SelectStroke="0"  Color="#FFF3B07B" HorizontalAlignment="Left" Height="30" Margin="867,141,0,0" VerticalAlignment="Top" Width="100"  Cursor="Hand" >
+                <Ellipse Fill="{Binding Color, ElementName=color_2, Mode=OneWay}" HorizontalAlignment="Left" Stroke="#00000000" VerticalAlignment="Top" Width="30" Height="30" StrokeThickness="{Binding SelectStroke, ElementName=color_2}"/>
+                <Label Content="{Binding CalcSum, ElementName=color_2, Mode=OneWay}" HorizontalAlignment="Left" Margin="45,0,0,0" VerticalAlignment="Top" Height="30" Width="55" FontSize="21"/>
+            </Puzzle:Selector>
+            <Puzzle:Selector x:Name="color_3" SelectStroke="0"  Color="#FFF59563" HorizontalAlignment="Left" Height="30" Margin="867,182,0,0" VerticalAlignment="Top" Width="100"  Cursor="Hand" >
+                <Ellipse Fill="{Binding Color, ElementName=color_3, Mode=OneWay}" HorizontalAlignment="Left" Stroke="#00000000" VerticalAlignment="Top" Width="30" Height="30" StrokeThickness="{Binding SelectStroke, ElementName=color_3}"/>
+                <Label Content="{Binding CalcSum, ElementName=color_3, Mode=OneWay}" HorizontalAlignment="Left" Margin="45,0,0,0" VerticalAlignment="Top" Height="30" Width="55" FontSize="21"/>
+            </Puzzle:Selector>
+            <Puzzle:Selector x:Name="color_4" SelectStroke="0" Color="#FFF57D5B" HorizontalAlignment="Left" Height="30" Margin="867,223,0,0" VerticalAlignment="Top" Width="100"  Cursor="Hand" >
+                <Ellipse Fill="{Binding Color, ElementName=color_4, Mode=OneWay}" HorizontalAlignment="Left" Stroke="#00000000" VerticalAlignment="Top" Width="30" Height="30" StrokeThickness="{Binding SelectStroke, ElementName=color_4}"/>
+                <Label Content="{Binding CalcSum, ElementName=color_4, Mode=OneWay}" HorizontalAlignment="Left" Margin="45,0,0,0" VerticalAlignment="Top" Height="30" Width="55" FontSize="21"/>
+            </Puzzle:Selector>
+        </Grid>
+
+        <Grid x:Name="_puzzleThree" Visibility="Collapsed">
+
+            <Button x:Name="reset" Content="Refresh" Margin="560,390,560,190" Width="100" Foreground="#FF85AEF5" Height="35" FontSize="16" Click="reset_Click" />
+            <Rectangle Fill="#FF959595" HorizontalAlignment="Center" VerticalAlignment="Center" Height="68" Width="398" RadiusX="10" RadiusY="10"/>
+
+            <Puzzle:Location x:Name="location_0" Height="50" Margin="420,284,750,281" Width="50" IsToad="True" IsTeam="Left" Toad="Image/Eris.png">
+                <Puzzle:Location.Background>
+                    <ImageBrush ImageSource="Image/black.png"/>
+                </Puzzle:Location.Background>
+                <Image Source="{Binding Toad, ElementName=location_0, Mode=OneWay}" />
+            </Puzzle:Location>
+            <Puzzle:Location x:Name="location_1" Height="50" Margin="475,284,695,281" Width="50" IsToad="True" IsTeam="Left" Toad="Image/Eris.png">
+                <Puzzle:Location.Background>
+                    <ImageBrush ImageSource="Image/black.png"/>
+                </Puzzle:Location.Background>
+                <Image Source="{Binding Toad, ElementName=location_1, Mode=OneWay}" />
+            </Puzzle:Location>
+            <Puzzle:Location x:Name="location_2" Height="50" Margin="530,284,640,281" Width="50" IsToad="True" IsTeam="Left" Toad="Image/Eris.png">
+                <Puzzle:Location.Background>
+                    <ImageBrush ImageSource="Image/black.png"/>
+                </Puzzle:Location.Background>
+                <Image Source="{Binding Toad, ElementName=location_2, Mode=OneWay}" />
+            </Puzzle:Location>
+            <Puzzle:Location x:Name="location_3" Height="50" Margin="585,284,585,281" Width="50" IsToad="False" >
+                <Puzzle:Location.Background>
+                    <ImageBrush ImageSource="Image/black.png"/>
+                </Puzzle:Location.Background>
+                <Image Source="{Binding Toad, ElementName=location_3, Mode=OneWay}" />
+            </Puzzle:Location>
+            <Puzzle:Location x:Name="location_4" Height="50" Margin="640,284,530,281" Width="50" IsToad="True" IsTeam="Right" Toad="Image/Mercury.png">
+                <Puzzle:Location.Background>
+                    <ImageBrush ImageSource="Image/black.png"/>
+                </Puzzle:Location.Background>
+                <Image Source="{Binding Toad, ElementName=location_4, Mode=OneWay}" />
+            </Puzzle:Location>
+            <Puzzle:Location x:Name="location_5" Height="50" Margin="695,284,475,281" Width="50" IsToad="True" IsTeam="Right" Toad="Image/Mercury.png" >
+                <Puzzle:Location.Background>
+                    <ImageBrush ImageSource="Image/black.png"/>
+                </Puzzle:Location.Background>
+                <Image Source="{Binding Toad, ElementName=location_5, Mode=OneWay}" />
+            </Puzzle:Location>
+            <Puzzle:Location x:Name="location_6" Height="50" Margin="750,284,420,281" Width="50" IsToad="True" IsTeam="Right" Toad="Image/Mercury.png" >
+                <Puzzle:Location.Background>
+                    <ImageBrush ImageSource="Image/black.png"/>
+                </Puzzle:Location.Background>
+                <Image Source="{Binding Toad, ElementName=location_6, Mode=OneWay}" />
+            </Puzzle:Location>
+
+        </Grid>
+
+        <Grid x:Name="_puzzleTwo" Visibility="Collapsed">
+            <Rectangle Width="500" Margin="361,60,359,55" Opacity="0.5" Fill="White" RadiusY="5" RadiusX="5"></Rectangle>
+            <Label Content="{Binding Count, ElementName=puzzleTwo}" Margin="866,188,225,157" FontSize="200" Foreground="#FFECECEC"/>
+            <Label Content="/8" Margin="970,188,25,157" FontSize="200" Foreground="#FFB2B2B2"/>
+
+            <Puzzle:Core x:Name="core0" X="0" Y="7" Height="50" Margin="396,86,746,434" Width="50">
+                <Puzzle:Core.Background>
+                    <ImageBrush ImageSource="Image/black.png"/>
+                </Puzzle:Core.Background>
+                <Image Source="{Binding Queen, ElementName=core0}" ></Image>
+            </Puzzle:Core>
+            <Puzzle:Core x:Name="core2" X="1" Y="7" Height="50" Margin="446,86,696,434" Width="50">
+                <Puzzle:Core.Background>
+                    <ImageBrush ImageSource="Image/white.png"/>
+                </Puzzle:Core.Background>
+                <Image Source="{Binding Queen, ElementName=core2}" ></Image>
+            </Puzzle:Core>
+            <Puzzle:Core x:Name="core3" X="2" Y="7" Height="50" Margin="496,86,646,434" Width="50">
+                <Puzzle:Core.Background>
+                    <ImageBrush ImageSource="Image/black.png"/>
+                </Puzzle:Core.Background>
+                <Image Source="{Binding Queen, ElementName=core3}" ></Image>
+            </Puzzle:Core>
+            <Puzzle:Core x:Name="core4" X="1" Y="6" Height="50" Margin="446,135,696,385" Width="50">
+                <Puzzle:Core.Background>
+                    <ImageBrush ImageSource="Image/black.png"/>
+                </Puzzle:Core.Background>
+                <Image Source="{Binding Queen, ElementName=core4}" ></Image>
+            </Puzzle:Core>
+            <Puzzle:Core x:Name="core5" X="3" Y="6" Height="50" Margin="546,135,596,385" Width="50">
+                <Puzzle:Core.Background>
+                    <ImageBrush ImageSource="Image/black.png"/>
+                </Puzzle:Core.Background>
+                <Image Source="{Binding Queen, ElementName=core5}" ></Image>
+            </Puzzle:Core>
+            <Puzzle:Core x:Name="core6" X="0" Y="6" Height="50" Margin="396,135,746,385" Width="50">
+                <Puzzle:Core.Background>
+                    <ImageBrush ImageSource="Image/white.png"/>
+                </Puzzle:Core.Background>
+                <Image Source="{Binding Queen, ElementName=core6}" ></Image>
+            </Puzzle:Core>
+            <Puzzle:Core x:Name="core7" X="3" Y="7" Height="50" Margin="546,86,596,434" Width="50">
+                <Puzzle:Core.Background>
+                    <ImageBrush ImageSource="Image/white.png"/>
+                </Puzzle:Core.Background>
+                <Image Source="{Binding Queen, ElementName=core7}" ></Image>
+            </Puzzle:Core>
+            <Puzzle:Core x:Name="core8" X="2" Y="6" Height="50" Margin="496,135,646,385" Width="50">
+                <Puzzle:Core.Background>
+                    <ImageBrush ImageSource="Image/white.png"/>
+                </Puzzle:Core.Background>
+                <Image Source="{Binding Queen, ElementName=core8}" ></Image>
+            </Puzzle:Core>
+            <Puzzle:Core x:Name="core9" X="2" Y="5" Height="50" Margin="496,186,646,334" Width="50">
+                <Puzzle:Core.Background>
+                    <ImageBrush ImageSource="Image/black.png"/>
+                </Puzzle:Core.Background>
+                <Image Source="{Binding Queen, ElementName=core9}" ></Image>
+            </Puzzle:Core>
+            <Puzzle:Core x:Name="core10" X="0" Y="5" Height="50" Margin="396,185,746,335" Width="50">
+                <Puzzle:Core.Background>
+                    <ImageBrush ImageSource="Image/black.png"/>
+                </Puzzle:Core.Background>
+                <Image Source="{Binding Queen, ElementName=core10}" ></Image>
+            </Puzzle:Core>
+            <Puzzle:Core x:Name="core11" X="4" Y="7" Height="50" Margin="596,86,546,434" Width="50">
+                <Puzzle:Core.Background>
+                    <ImageBrush ImageSource="Image/black.png"/>
+                </Puzzle:Core.Background>
+                <Image Source="{Binding Queen, ElementName=core11}" ></Image>
+            </Puzzle:Core>
+            <Puzzle:Core x:Name="core12" X="1" Y="5" Height="50" Margin="446,185,696,335" Width="50">
+                <Puzzle:Core.Background>
+                    <ImageBrush ImageSource="Image/white.png"/>
+                </Puzzle:Core.Background>
+                <Image Source="{Binding Queen, ElementName=core12}" ></Image>
+            </Puzzle:Core>
+            <Puzzle:Core x:Name="core1" X="3" Y="5" Height="50" Margin="546,185,596,335" Width="50">
+                <Puzzle:Core.Background>
+                    <ImageBrush ImageSource="Image/white.png"/>
+                </Puzzle:Core.Background>
+                <Image Source="{Binding Queen, ElementName=core1}" ></Image>
+            </Puzzle:Core>
+            <Puzzle:Core x:Name="core13" X="4" Y="6" Height="50" Margin="596,135,546,385" Width="50">
+                <Puzzle:Core.Background>
+                    <ImageBrush ImageSource="Image/white.png"/>
+                </Puzzle:Core.Background>
+                <Image Source="{Binding Queen, ElementName=core13}" ></Image>
+            </Puzzle:Core>
+            <Puzzle:Core x:Name="core14" X="0" Y="4" Height="50" Margin="396,235,746,285" Width="50">
+                <Puzzle:Core.Background>
+                    <ImageBrush ImageSource="Image/white.png"/>
+                </Puzzle:Core.Background>
+                <Image Source="{Binding Queen, ElementName=core14}" ></Image>
+            </Puzzle:Core>
+            <Puzzle:Core x:Name="core15" X="2" Y="4" Height="50" Margin="496,235,646,285" Width="50">
+                <Puzzle:Core.Background>
+                    <ImageBrush ImageSource="Image/white.png"/>
+                </Puzzle:Core.Background>
+                <Image Source="{Binding Queen, ElementName=core15}" ></Image>
+            </Puzzle:Core>
+            <Puzzle:Core x:Name="core16" X="5" Y="7" Height="50" Margin="646,86,496,434" Width="50">
+                <Puzzle:Core.Background>
+                    <ImageBrush ImageSource="Image/white.png"/>
+                </Puzzle:Core.Background>
+                <Image Source="{Binding Queen, ElementName=core16}" ></Image>
+            </Puzzle:Core>
+            <Puzzle:Core x:Name="core17" X="1" Y="4" Height="50" Margin="446,235,696,285" Width="50">
+                <Puzzle:Core.Background>
+                    <ImageBrush ImageSource="Image/black.png"/>
+                </Puzzle:Core.Background>
+                <Image Source="{Binding Queen, ElementName=core17}" ></Image>
+            </Puzzle:Core>
+            <Puzzle:Core x:Name="core18" X="3" Y="4" Height="50" Margin="546,235,596,285" Width="50">
+                <Puzzle:Core.Background>
+                    <ImageBrush ImageSource="Image/black.png"/>
+                </Puzzle:Core.Background>
+                <Image Source="{Binding Queen, ElementName=core18}" ></Image>
+            </Puzzle:Core>
+            <Puzzle:Core x:Name="core19" X="4" Y="5" Height="50" Margin="596,185,546,335" Width="50">
+                <Puzzle:Core.Background>
+                    <ImageBrush ImageSource="Image/black.png"/>
+                </Puzzle:Core.Background>
+                <Image Source="{Binding Queen, ElementName=core19}" ></Image>
+            </Puzzle:Core>
+            <Puzzle:Core x:Name="core20" X="5" Y="6" Height="50" Margin="646,135,496,385" Width="50">
+                <Puzzle:Core.Background>
+                    <ImageBrush ImageSource="Image/black.png"/>
+                </Puzzle:Core.Background>
+                <Image Source="{Binding Queen, ElementName=core20}" ></Image>
+            </Puzzle:Core>
+            <Puzzle:Core x:Name="core21" X="6" Y="7" Height="50" Margin="696,86,446,434" Width="50">
+                <Puzzle:Core.Background>
+                    <ImageBrush ImageSource="Image/black.png"/>
+                </Puzzle:Core.Background>
+                <Image Source="{Binding Queen, ElementName=core21}" ></Image>
+            </Puzzle:Core>
+            <Puzzle:Core x:Name="core22" X="2" Y="3" Height="50" Margin="496,285,646,235" Width="50">
+                <Puzzle:Core.Background>
+                    <ImageBrush ImageSource="Image/black.png"/>
+                </Puzzle:Core.Background>
+                <Image Source="{Binding Queen, ElementName=core22}" ></Image>
+            </Puzzle:Core>
+            <Puzzle:Core x:Name="core23" X="0" Y="3" Height="50" Margin="396,285,746,235" Width="50">
+                <Puzzle:Core.Background>
+                    <ImageBrush ImageSource="Image/black.png"/>
+                </Puzzle:Core.Background>
+                <Image Source="{Binding Queen, ElementName=core23}" ></Image>
+            </Puzzle:Core>
+            <Puzzle:Core x:Name="core24" X="1" Y="3" Height="50" Margin="446,285,696,235" Width="50">
+                <Puzzle:Core.Background>
+                    <ImageBrush ImageSource="Image/white.png"/>
+                </Puzzle:Core.Background>
+                <Image Source="{Binding Queen, ElementName=core24}" ></Image>
+            </Puzzle:Core>
+            <Puzzle:Core x:Name="core25" X="3" Y="3" Height="50" Margin="546,285,596,235" Width="50">
+                <Puzzle:Core.Background>
+                    <ImageBrush ImageSource="Image/white.png"/>
+                </Puzzle:Core.Background>
+                <Image Source="{Binding Queen, ElementName=core25}" ></Image>
+            </Puzzle:Core>
+            <Puzzle:Core x:Name="core26" X="4" Y="4" Height="50" Margin="596,235,546,285" Width="50">
+                <Puzzle:Core.Background>
+                    <ImageBrush ImageSource="Image/white.png"/>
+                </Puzzle:Core.Background>
+                <Image Source="{Binding Queen, ElementName=core26}" ></Image>
+            </Puzzle:Core>
+            <Puzzle:Core x:Name="core27" X="0" Y="2" Height="50" Margin="396,335,746,185" Width="50">
+                <Puzzle:Core.Background>
+                    <ImageBrush ImageSource="Image/white.png"/>
+                </Puzzle:Core.Background>
+                <Image Source="{Binding Queen, ElementName=core27}" ></Image>
+            </Puzzle:Core>
+            <Puzzle:Core x:Name="core28" X="2" Y="2" Height="50" Margin="496,335,646,185" Width="50">
+                <Puzzle:Core.Background>
+                    <ImageBrush ImageSource="Image/white.png"/>
+                </Puzzle:Core.Background>
+                <Image Source="{Binding Queen, ElementName=core28}" ></Image>
+            </Puzzle:Core>
+            <Puzzle:Core x:Name="core29" X="5" Y="5" Height="50" Margin="646,185,496,335" Width="50">
+                <Puzzle:Core.Background>
+                    <ImageBrush ImageSource="Image/white.png"/>
+                </Puzzle:Core.Background>
+                <Image Source="{Binding Queen, ElementName=core29}" ></Image>
+            </Puzzle:Core>
+            <Puzzle:Core x:Name="core30" X="6" Y="6" Height="50" Margin="696,135,446,385" Width="50">
+                <Puzzle:Core.Background>
+                    <ImageBrush ImageSource="Image/white.png"/>
+                </Puzzle:Core.Background>
+                <Image Source="{Binding Queen, ElementName=core30}" ></Image>
+            </Puzzle:Core>
+            <Puzzle:Core x:Name="core31" X="7" Y="7" Height="50" Margin="746,86,396,434" Width="50" >
+                <Puzzle:Core.Background>
+                    <ImageBrush ImageSource="Image/white.png"/>
+                </Puzzle:Core.Background>
+                <Image Source="{Binding Queen, ElementName=core31}" ></Image>
+            </Puzzle:Core>
+            <Puzzle:Core x:Name="core32" X="7" Y="6" Height="50" Margin="746,135,396,385" Width="50">
+                <Puzzle:Core.Background>
+                    <ImageBrush ImageSource="Image/black.png"/>
+                </Puzzle:Core.Background>
+                <Image Source="{Binding Queen, ElementName=core32}" ></Image>
+            </Puzzle:Core>
+            <Puzzle:Core x:Name="core33" X="6" Y="5" Height="50" Margin="696,185,446,335" Width="50">
+                <Puzzle:Core.Background>
+                    <ImageBrush ImageSource="Image/black.png"/>
+                </Puzzle:Core.Background>
+                <Image Source="{Binding Queen, ElementName=core33}" ></Image>
+            </Puzzle:Core>
+            <Puzzle:Core x:Name="core34" X="5" Y="4" Height="50" Margin="646,235,496,285" Width="50">
+                <Puzzle:Core.Background>
+                    <ImageBrush ImageSource="Image/black.png"/>
+                </Puzzle:Core.Background>
+                <Image Source="{Binding Queen, ElementName=core34}" ></Image>
+            </Puzzle:Core>
+            <Puzzle:Core x:Name="core35" X="4" Y="3" Height="50" Margin="596,285,546,235" Width="50">
+                <Puzzle:Core.Background>
+                    <ImageBrush ImageSource="Image/black.png"/>
+                </Puzzle:Core.Background>
+                <Image Source="{Binding Queen, ElementName=core35}" ></Image>
+            </Puzzle:Core>
+            <Puzzle:Core x:Name="core36"  X="3" Y="2" Height="50" Margin="546,335,596,185" Width="50">
+                <Puzzle:Core.Background>
+                    <ImageBrush ImageSource="Image/black.png"/>
+                </Puzzle:Core.Background>
+                <Image Source="{Binding Queen, ElementName=core36}" ></Image>
+            </Puzzle:Core>
+            <Puzzle:Core x:Name="core37" X="1" Y="2" Height="50" Margin="446,335,696,185" Width="50">
+                <Puzzle:Core.Background>
+                    <ImageBrush ImageSource="Image/black.png"/>
+                </Puzzle:Core.Background>
+                <Image Source="{Binding Queen, ElementName=core37}" ></Image>
+            </Puzzle:Core>
+            <Puzzle:Core x:Name="core38" X="2" Y="1" Height="50" Margin="496,385,646,135" Width="50">
+                <Puzzle:Core.Background>
+                    <ImageBrush ImageSource="Image/black.png"/>
+                </Puzzle:Core.Background>
+                <Image Source="{Binding Queen, ElementName=core38}" ></Image>
+            </Puzzle:Core>
+            <Puzzle:Core x:Name="core39" X="0" Y="1" Height="50" Margin="396,385,746,135" Width="50">
+                <Puzzle:Core.Background>
+                    <ImageBrush ImageSource="Image/black.png"/>
+                </Puzzle:Core.Background>
+                <Image Source="{Binding Queen, ElementName=core39}" ></Image>
+            </Puzzle:Core>
+            <Puzzle:Core x:Name="core40" X="1" Y="1" Height="50" Margin="446,385,696,135" Width="50">
+                <Puzzle:Core.Background>
+                    <ImageBrush ImageSource="Image/white.png"/>
+                </Puzzle:Core.Background>
+                <Image Source="{Binding Queen, ElementName=core40}" ></Image>
+            </Puzzle:Core>
+            <Puzzle:Core x:Name="core41" X="0" Y="0" Height="50" Margin="396,435,746,85" Width="50">
+                <Puzzle:Core.Background>
+                    <ImageBrush ImageSource="Image/white.png"/>
+                </Puzzle:Core.Background>
+                <Image Source="{Binding Queen, ElementName=core41}" ></Image>
+            </Puzzle:Core>
+            <Puzzle:Core x:Name="core42" X="2" Y="0" Height="50" Margin="496,435,646,85" Width="50">
+                <Puzzle:Core.Background>
+                    <ImageBrush ImageSource="Image/white.png"/>
+                </Puzzle:Core.Background>
+                <Image Source="{Binding Queen, ElementName=core42}" ></Image>
+            </Puzzle:Core>
+            <Puzzle:Core x:Name="core43" X="1" Y="0" Height="50" Margin="446,435,696,85" Width="50">
+                <Puzzle:Core.Background>
+                    <ImageBrush ImageSource="Image/black.png"/>
+                </Puzzle:Core.Background>
+                <Image Source="{Binding Queen, ElementName=core43}" ></Image>
+            </Puzzle:Core>
+            <Puzzle:Core x:Name="core44" X="3" Y="0" Height="50" Margin="546,435,596,85" Width="50">
+                <Puzzle:Core.Background>
+                    <ImageBrush ImageSource="Image/black.png"/>
+                </Puzzle:Core.Background>
+                <Image Source="{Binding Queen, ElementName=core44}" ></Image>
+            </Puzzle:Core>
+            <Puzzle:Core x:Name="core45" X="3" Y="1" Height="50" Margin="546,385,596,135" Width="50">
+                <Puzzle:Core.Background>
+                    <ImageBrush ImageSource="Image/white.png"/>
+                </Puzzle:Core.Background>
+                <Image Source="{Binding Queen, ElementName=core45}" ></Image>
+            </Puzzle:Core>
+            <Puzzle:Core x:Name="core46" X="4" Y="2" Height="50" Margin="596,335,546,185" Width="50">
+                <Puzzle:Core.Background>
+                    <ImageBrush ImageSource="Image/white.png"/>
+                </Puzzle:Core.Background>
+                <Image Source="{Binding Queen, ElementName=core46}" ></Image>
+            </Puzzle:Core>
+            <Puzzle:Core x:Name="core47" X="5" Y="3" Height="50" Margin="646,285,496,235" Width="50">
+                <Puzzle:Core.Background>
+                    <ImageBrush ImageSource="Image/white.png"/>
+                </Puzzle:Core.Background>
+                <Image Source="{Binding Queen, ElementName=core47}" ></Image>
+            </Puzzle:Core>
+            <Puzzle:Core x:Name="core48" X="6" Y="4" Height="50" Margin="696,235,446,285" Width="50">
+                <Puzzle:Core.Background>
+                    <ImageBrush ImageSource="Image/white.png"/>
+                </Puzzle:Core.Background>
+                <Image Source="{Binding Queen, ElementName=core48}" ></Image>
+            </Puzzle:Core>
+            <Puzzle:Core x:Name="core49" X="7" Y="5" Height="50" Margin="746,185,396,335" Width="50">
+                <Puzzle:Core.Background>
+                    <ImageBrush ImageSource="Image/white.png"/>
+                </Puzzle:Core.Background>
+                <Image Source="{Binding Queen, ElementName=core49}" ></Image>
+            </Puzzle:Core>
+            <Puzzle:Core x:Name="core50" X="4" Y="1" Height="50" Margin="596,385,546,135" Width="50">
+                <Puzzle:Core.Background>
+                    <ImageBrush ImageSource="Image/black.png"/>
+                </Puzzle:Core.Background>
+                <Image Source="{Binding Queen, ElementName=core50}" ></Image>
+            </Puzzle:Core>
+            <Puzzle:Core x:Name="core51" X="5" Y="2" Height="50" Margin="646,335,496,185" Width="50">
+                <Puzzle:Core.Background>
+                    <ImageBrush ImageSource="Image/black.png"/>
+                </Puzzle:Core.Background>
+                <Image Source="{Binding Queen, ElementName=core51}" ></Image>
+            </Puzzle:Core>
+            <Puzzle:Core x:Name="core52" X="6" Y="3" Height="50" Margin="696,285,446,235" Width="50">
+                <Puzzle:Core.Background>
+                    <ImageBrush ImageSource="Image/black.png"/>
+                </Puzzle:Core.Background>
+                <Image Source="{Binding Queen, ElementName=core52}" ></Image>
+            </Puzzle:Core>
+            <Puzzle:Core x:Name="core53" X="7" Y="4" Height="50" Margin="746,235,396,285" Width="50">
+                <Puzzle:Core.Background>
+                    <ImageBrush ImageSource="Image/black.png"/>
+                </Puzzle:Core.Background>
+                <Image Source="{Binding Queen, ElementName=core53}" ></Image>
+            </Puzzle:Core>
+            <Puzzle:Core x:Name="core54" X="4" Y="0" Height="50" Margin="596,435,546,85" Width="50">
+                <Puzzle:Core.Background>
+                    <ImageBrush ImageSource="Image/white.png"/>
+                </Puzzle:Core.Background>
+                <Image Source="{Binding Queen, ElementName=core54}" ></Image>
+            </Puzzle:Core>
+            <Puzzle:Core x:Name="core55" X="5" Y="1" Height="50" Margin="646,385,496,135" Width="50">
+                <Puzzle:Core.Background>
+                    <ImageBrush ImageSource="Image/white.png"/>
+                </Puzzle:Core.Background>
+                <Image Source="{Binding Queen, ElementName=core55}" ></Image>
+            </Puzzle:Core>
+            <Puzzle:Core x:Name="core56" X="6" Y="2" Height="50" Margin="696,335,446,185" Width="50">
+                <Puzzle:Core.Background>
+                    <ImageBrush ImageSource="Image/white.png"/>
+                </Puzzle:Core.Background>
+                <Image Source="{Binding Queen, ElementName=core56}" ></Image>
+            </Puzzle:Core>
+            <Puzzle:Core x:Name="core57" X="7" Y="3" Height="50" Margin="746,285,396,235" Width="50">
+                <Puzzle:Core.Background>
+                    <ImageBrush ImageSource="Image/white.png"/>
+                </Puzzle:Core.Background>
+                <Image Source="{Binding Queen, ElementName=core57}" ></Image>
+            </Puzzle:Core>
+            <Puzzle:Core x:Name="core58" X="7" Y="2" Height="50" Margin="746,335,396,185" Width="50">
+                <Puzzle:Core.Background>
+                    <ImageBrush ImageSource="Image/black.png"/>
+                </Puzzle:Core.Background>
+                <Image Source="{Binding Queen, ElementName=core58}" ></Image>
+            </Puzzle:Core>
+            <Puzzle:Core x:Name="core59" X="6" Y="1" Height="50" Margin="696,385,446,135" Width="50">
+                <Puzzle:Core.Background>
+                    <ImageBrush ImageSource="Image/black.png"/>
+                </Puzzle:Core.Background>
+                <Image Source="{Binding Queen, ElementName=core59}" ></Image>
+            </Puzzle:Core>
+            <Puzzle:Core x:Name="core60" X="5" Y="0" Height="50" Margin="646,435,496,85" Width="50">
+                <Puzzle:Core.Background>
+                    <ImageBrush ImageSource="Image/black.png"/>
+                </Puzzle:Core.Background>
+                <Image Source="{Binding Queen, ElementName=core60}" ></Image>
+            </Puzzle:Core>
+            <Puzzle:Core x:Name="core61" X="6" Y="0" Height="50" Margin="696,435,446,85" Width="50">
+                <Puzzle:Core.Background>
+                    <ImageBrush ImageSource="Image/white.png"/>
+                </Puzzle:Core.Background>
+                <Image Source="{Binding Queen, ElementName=core61}" ></Image>
+            </Puzzle:Core>
+            <Puzzle:Core x:Name="core62" X="7" Y="1" Height="50" Margin="746,385,396,135" Width="50">
+                <Puzzle:Core.Background>
+                    <ImageBrush ImageSource="Image/white.png"/>
+                </Puzzle:Core.Background>
+                <Image Source="{Binding Queen, ElementName=core62}" ></Image>
+            </Puzzle:Core>
+            <Puzzle:Core x:Name="core63" X="7" Y="0" Height="50" Margin="746,435,396,85" Width="50">
+                <Puzzle:Core.Background>
+                    <ImageBrush ImageSource="Image/black.png"/>
+                </Puzzle:Core.Background>
+                <Image Source="{Binding Queen, ElementName=core63}" ></Image>
+            </Puzzle:Core>
+
+        </Grid>
+
+        <Label x:Name="win" Content="WIN" FontSize="100" Foreground="#FF00C5FF" Visibility="Hidden" Opacity=".7" Margin="995,405,20,80"/>
+        <TextBlock Name="law" Margin="10,55,898,169" Foreground="#FF18D5FF" TextWrapping="Wrap" FontSize="20" Height="391" Width="312" Text=""/>
+        <Rectangle Margin="0,0,0,560" MouseLeftButtonDown="DragMove_Window" Fill="#19FFFFFF"></Rectangle>
+        <Label Content="Правила гри:" FontSize="21"  Margin="10,10,898,565" Foreground="#FF618BFB"/>
+        <Button x:Name="next" Visibility="Hidden" Content="Далі >" Margin="1055,540,62,45" Width="103" Foreground="#FF5BB5FF" FontSize="18"/>
+        <Button x:Name="exit" Content="Вийти" Margin="1097,10,0,570" Width="103" Foreground="#FFFF005D" FontSize="18" Click="exit_Click"/>
+
+    </Grid>
+</Window>
