@@ -70,52 +70,52 @@
         <Puzzle:PuzzleThree x:Name="puzzleThree" WinPuzzle="puzzleThree_WinPuzzle"/>
 
         <Grid x:Name="_puzzleOne" Visibility="Collapsed">
-            <Puzzle:Number x:Name="c1" Value="3" Indetyfity="2" Height="100" Margin="398,108,712,407" Width="100" Background="White" Cursor="Hand">
+            <Puzzle:Number x:Name="c1" Value="3" Identify="2" Height="100" Margin="398,108,712,407" Width="100" Background="White" Cursor="Hand">
                 <Label Content="{Binding Value, ElementName=c1, Mode=OneWay}" HorizontalAlignment="Center" VerticalAlignment="Center" FontSize="60" Foreground="#FF0C0C0C"/>
             </Puzzle:Number>
-            <Puzzle:Number x:Name="c2" Value="5" Indetyfity="3" Height="100" Margin="498,100,602,400" Width="100" Background="White" Cursor="Hand">
+            <Puzzle:Number x:Name="c2" Value="5" Identify="3" Height="100" Margin="498,100,602,400" Width="100" Background="White" Cursor="Hand">
                 <Label Content="{Binding Value, ElementName=c2, Mode=OneWay}" HorizontalAlignment="Center" VerticalAlignment="Center" FontSize="60" Foreground="#FF0C0C0C"/>
             </Puzzle:Number>
-            <Puzzle:Number x:Name="c3" Value="1" Indetyfity="3"  Height="100" Margin="603,100,497,400" Width="100" Background="White" Cursor="Hand">
+            <Puzzle:Number x:Name="c3" Value="1" Identify="3"  Height="100" Margin="603,100,497,400" Width="100" Background="White" Cursor="Hand">
                 <Label Content="{Binding Value, ElementName=c3, Mode=OneWay}" HorizontalAlignment="Center" VerticalAlignment="Center" FontSize="60" Foreground="#FF0C0C0C"/>
             </Puzzle:Number>
-            <Puzzle:Number x:Name="c4" Value="1" Indetyfity="3" Height="100" Margin="708,100,392,400" Width="100" Background="White" Cursor="Hand">
+            <Puzzle:Number x:Name="c4" Value="1" Identify="3" Height="100" Margin="708,100,392,400" Width="100" Background="White" Cursor="Hand">
                 <Label Content="{Binding Value, ElementName=c4, Mode=OneWay}" HorizontalAlignment="Center" VerticalAlignment="Center" FontSize="60" Foreground="#FF0C0C0C"/>
             </Puzzle:Number>
-            <Puzzle:Number x:Name="c5" Value="4" Indetyfity="2" Height="100" Margin="393,205,707,295" Width="100" Background="White" Cursor="Hand">
+            <Puzzle:Number x:Name="c5" Value="4" Identify="2" Height="100" Margin="393,205,707,295" Width="100" Background="White" Cursor="Hand">
                 <Label Content="{Binding Value, ElementName=c5, Mode=OneWay}" HorizontalAlignment="Center" VerticalAlignment="Center" FontSize="60" Foreground="#FF0C0C0C"/>
             </Puzzle:Number>
-            <Puzzle:Number x:Name="c6" Value="7" Indetyfity="1" Height="100" Margin="498,205,602,295" Width="100" Background="White" Cursor="Hand">
+            <Puzzle:Number x:Name="c6" Value="7" Identify="1" Height="100" Margin="498,205,602,295" Width="100" Background="White" Cursor="Hand">
                 <Label Content="{Binding Value, ElementName=c6, Mode=OneWay}" HorizontalAlignment="Center" VerticalAlignment="Center" FontSize="60" Foreground="#FF0C0C0C"/>
             </Puzzle:Number>
-            <Puzzle:Number x:Name="c7" Value="1" Indetyfity="6" Height="100" Margin="603,205,497,295" Width="100" Background="White" Cursor="Hand">
+            <Puzzle:Number x:Name="c7" Value="1" Identify="6" Height="100" Margin="603,205,497,295" Width="100" Background="White" Cursor="Hand">
                 <Label Content="{Binding Value, ElementName=c7, Mode=OneWay}" HorizontalAlignment="Center" VerticalAlignment="Center" FontSize="60" Foreground="#FF0C0C0C"/>
             </Puzzle:Number>
-            <Puzzle:Number x:Name="c8" Value="1" Indetyfity="6" Height="100" Margin="708,205,392,295" Width="100" Background="White" Cursor="Hand">
+            <Puzzle:Number x:Name="c8" Value="1" Identify="6" Height="100" Margin="708,205,392,295" Width="100" Background="White" Cursor="Hand">
                 <Label Content="{Binding Value, ElementName=c8, Mode=OneWay}" HorizontalAlignment="Center" VerticalAlignment="Center" FontSize="60" Foreground="#FF0C0C0C"/>
             </Puzzle:Number>
-            <Puzzle:Number x:Name="c9"  Value="1" Indetyfity="4" Height="100" Margin="393,310,707,190" Width="100" Background="White" Cursor="Hand">
+            <Puzzle:Number x:Name="c9"  Value="1" Identify="4" Height="100" Margin="393,310,707,190" Width="100" Background="White" Cursor="Hand">
                 <Label Content="{Binding Value, ElementName=c9, Mode=OneWay}" HorizontalAlignment="Center" VerticalAlignment="Center" FontSize="60" Foreground="#FF0C0C0C"/>
             </Puzzle:Number>
-            <Puzzle:Number x:Name="c10"  Value="3" Indetyfity="4" Height="100" Margin="498,310,602,190" Width="100" Background="White" Cursor="Hand">
+            <Puzzle:Number x:Name="c10"  Value="3" Identify="4" Height="100" Margin="498,310,602,190" Width="100" Background="White" Cursor="Hand">
                 <Label Content="{Binding Value, ElementName=c10, Mode=OneWay}" HorizontalAlignment="Center" VerticalAlignment="Center" FontSize="60" Foreground="#FF0C0C0C"/>
             </Puzzle:Number>
-            <Puzzle:Number x:Name="c11"  Value="1" Indetyfity="6" Height="100" Margin="603,310,497,190" Width="100" Background="White" Cursor="Hand">
+            <Puzzle:Number x:Name="c11"  Value="1" Identify="6" Height="100" Margin="603,310,497,190" Width="100" Background="White" Cursor="Hand">
                 <Label Content="{Binding Value, ElementName=c11, Mode=OneWay}" HorizontalAlignment="Center" VerticalAlignment="Center" FontSize="60" Foreground="#FF0C0C0C"/>
             </Puzzle:Number>
-            <Puzzle:Number x:Name="c12"  Value="1" Indetyfity="6" Height="100" Margin="708,310,392,190" Width="100" Background="White"  Cursor="Hand">
+            <Puzzle:Number x:Name="c12"  Value="1" Identify="6" Height="100" Margin="708,310,392,190" Width="100" Background="White"  Cursor="Hand">
                 <Label Content="{Binding Value, ElementName=c12, Mode=OneWay}" HorizontalAlignment="Center" VerticalAlignment="Center" FontSize="60" Foreground="#FF0C0C0C"/>
             </Puzzle:Number>
-            <Puzzle:Number x:Name="c13"  Value="1" Indetyfity="4" Height="100" Margin="393,415,707,85" Width="100" Background="White" Cursor="Hand">
+            <Puzzle:Number x:Name="c13"  Value="1" Identify="4" Height="100" Margin="393,415,707,85" Width="100" Background="White" Cursor="Hand">
                 <Label Content="{Binding Value, ElementName=c13, Mode=OneWay}" HorizontalAlignment="Center" VerticalAlignment="Center" FontSize="60" Foreground="#FF0C0C0C"/>
             </Puzzle:Number>
-            <Puzzle:Number x:Name="c14"  Value="2" Indetyfity="4" Height="100" Margin="498,415,602,85" Width="100" Background="White"  Cursor="Hand">
+            <Puzzle:Number x:Name="c14"  Value="2" Identify="4" Height="100" Margin="498,415,602,85" Width="100" Background="White"  Cursor="Hand">
                 <Label Content="{Binding Value, ElementName=c14, Mode=OneWay}" HorizontalAlignment="Center" VerticalAlignment="Center" FontSize="60" Foreground="#FF0C0C0C"/>
             </Puzzle:Number>
-            <Puzzle:Number x:Name="c15" Value="1" Indetyfity="6" Height="100" Margin="603,415,497,85" Width="100" Background="White"  Cursor="Hand">
+            <Puzzle:Number x:Name="c15" Value="1" Identify="6" Height="100" Margin="603,415,497,85" Width="100" Background="White"  Cursor="Hand">
                 <Label Content="{Binding Value, ElementName=c15, Mode=OneWay}" HorizontalAlignment="Center" VerticalAlignment="Center" FontSize="60" Foreground="#FF0C0C0C"/>
             </Puzzle:Number>
-            <Puzzle:Number x:Name="c16" Value="2" Indetyfity="6" Height="100" Margin="708,415,392,85" Width="100" Background="White"  Cursor="Hand">
+            <Puzzle:Number x:Name="c16" Value="2" Identify="6" Height="100" Margin="708,415,392,85" Width="100" Background="White"  Cursor="Hand">
                 <Label Content="{Binding Value, ElementName=c16, Mode=OneWay}" HorizontalAlignment="Center" VerticalAlignment="Center" FontSize="60" Foreground="#FF0C0C0C"/>
             </Puzzle:Number>
 

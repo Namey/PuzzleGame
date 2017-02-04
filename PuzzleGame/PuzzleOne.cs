@@ -84,7 +84,7 @@ namespace Puzzle
         byte _value;
 
         public Sum Sum { get; set; }
-        public byte Indetyfity { get; set; }
+        public byte Identify { get; set; }
 
         public byte Value
         {
@@ -106,7 +106,7 @@ namespace Puzzle
 
     abstract class Sum : System.Windows.Controls.Grid, System.ComponentModel.INotifyPropertyChanged
     {
-        byte sum, count, indetyfity;
+        byte sum, count, identify;
 
         public bool Collected { get; private set; } = false;
 
@@ -124,7 +124,7 @@ namespace Puzzle
         {
             ++count;
             CalcSum += n.Value;
-            indetyfity += n.Indetyfity;
+            identify += n.Identify;
 
             Scaning();
         }
@@ -133,14 +133,14 @@ namespace Puzzle
         {
             --count;
             CalcSum -= n.Value;
-            indetyfity -= n.Indetyfity;
+            identify -= n.Identify;
 
             Scaning();
         }
 
         void Scaning()
         {
-            if (CalcSum == 7 && indetyfity / count == count)
+            if (CalcSum == 7 && identify / count == count)
                 Collected = true;
             else
                 Collected = false;

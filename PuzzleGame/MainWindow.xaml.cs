@@ -50,7 +50,7 @@ namespace PuzzleGame
             puzzleOne.InitializeSelector(ref sel);
         }
 
-        void InitiaizePuzzeTwo()
+        void InitializePuzzeTwo()
         {
             Core[] c = new Core[64];
             var child = _puzzleTwo.Children.GetEnumerator();
@@ -120,7 +120,7 @@ namespace PuzzleGame
             next.Visibility = Visibility.Hidden;
             _puzzleThree.Visibility = Visibility.Collapsed;
 
-            InitiaizePuzzeTwo();
+            InitializePuzzeTwo();
             law.Text = puzzleTwo.LawGame;
             _puzzleTwo.Visibility = Visibility.Visible;
 
