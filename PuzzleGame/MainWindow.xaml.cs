@@ -24,12 +24,11 @@ namespace PuzzleGame
 
         void InitializePuzzleOne()
         {
-            int _is = 0, _in = 0;
             Number[] num = new Number[16];
             Selector[] sel = new Selector[5];
             var child = _puzzleOne.Children.GetEnumerator();
 
-            while (child.MoveNext())
+            for (int _is = 0, _in = 0; child.MoveNext();)
             {
                 var numItem = child.Current as Number;
 
